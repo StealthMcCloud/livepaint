@@ -1,6 +1,7 @@
 // Add logic to this script to poll server every second for updated pixels.
 const timeoutLength = 1000;
 let lengthOfLastServerUpdate = 0;
+let clientUpdates = [];
 
 const pollServer = async function () {
     let body = {

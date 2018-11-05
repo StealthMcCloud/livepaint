@@ -31,6 +31,12 @@ Bitmap.prototype.render = function(target_element) {
 Bitmap.prototype.setColor = function(row, col, color) {
     this.grid[row][col] = color;
     this.cells[row][col].style.background = color;
+    clientUpdates.push([row, col, color])
+}
+
+Bitmap.prototype.applyUpdatesFromServer = function(row, col, color) {
+    this.grid[row][col] = color;
+    this.cells[row][col].style.background = color;
 }
 
 Bitmap.prototype.handleEvent = function(event) {
